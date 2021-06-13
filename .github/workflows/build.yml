@@ -6,6 +6,9 @@ jobs:
   build-linux-ubuntu:
     runs-on: ubuntu-latest
     steps:
+    - name: install dependencies
+      run: |
+          sudo apt-get install libusb-1.0-0-dev
     - name: prepare environment
       run: |
           echo "target_triplet=`gcc -dumpmachine`" >> $GITHUB_ENV
